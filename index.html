@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>proto</title>
+        <style type="text/css">
+            @font-face 
+            {
+                font-family: visitor;
+                src: url("VISITOR2.TTF");
+            }
+        
+            @media all
+            {
+                *
+                {
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                html, body
+                {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background: #ccc;
+                }
+                
+                .fps
+                {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 40px;
+                    background: rgba(0, 222, 0, 0.5);
+                    line-height: 40px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                
+                .overlay
+                {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: none;
+                    color: white;
+                    font-family: visitor;
+                    font-size: 24px;
+                    text-align: center;
+                    line-height: 32px;
+                }
+            }
+        </style>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/classes.js"></script>
+        <script type="text/javascript" src="js/game.js"></script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <div class="overlay" id="pause"><h2>PAUSED</h2></div>
+        <div class="overlay" style="display:block;" id="menu"><h1>SPACE TRANSPORTER</h1><br>- EXTRA CARGO EDITION -<br><br>PRESS SPACE TO START OR ESC TO SHOW GUIDE</div>
+        <div class="overlay" id="gameover"><h2>GAME OVER</h2><br>PRESS SPACE TO RETURN TO MENU</div>
+        <div class="overlay" id="guide"><h2>HOW TO PLAY</h2><br>
+            YOUR GOAL IS TO REACH SPACE STATION AND SELL ALL <br>VALUABLES IN YOUR CARGO.<br>
+            PROGRESS BARS AT THE TOP INDICATE SPACE LEFT IN YOUR <br>CARGO BAY AND DISTANCE TO SPACE STATION.<br>
+            EVERYTHING YOU PICK UP WILL DECREASE THAT FREE SPACE.<br>
+            SOME THINGS YOU CAN PICK UP:<br>
+            <img src="gfx/crateA.png"><img src="gfx/crateB.png"><img src="gfx/crateC.png"> - IMPORT VALUABLES THAT SELL FOR $<br>
+            <img src="gfx/bonusA.png"><img src="gfx/bonusB.png"> - SPEED AND POWER AUGMENTS<br>
+            <img src="gfx/bomb.png"> - BOMBS... PROBABLY NOT A GOOD IDEA<br>
+            ON YOUR WAY YOU MIGHT ALSO ENCOUNTER SOME DIFFICULTIES.<br>
+            TO OVERCOME THEM USE ARROW KEYS TO MOVE AND SPACE BAR TO <br><h3>BLAST'EM!</h3><br>
+        </div>
+        <div class="overlay" id="endgame"><h2>CONGRATULATIONS, YOU WIN</h2><br>YOU EARN <span id="highscore"></span>$</div>
+        <div class="fps" id="fps"></div>
+        <script>init();</script>
+    </body>
+</html>
